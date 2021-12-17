@@ -16,3 +16,42 @@
 |customImg|自定义图片路径(type必须设置为img)|string|-|-|
 |autoClose|自动关闭时长(值小于等于0可以取消自动关闭)|number|-|4500|
 |type|提示框类型|string|success/warning/info/error/custom/img| - |
+
+## 在main.js注册 Toasts
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+const app = createApp(App)
+
+// 安装toasts
+import toasts from './components/toasts'
+
+app.use(toasts).mount('#app')
+```
+## 使用 toasts
+ ```vue
+ <template>
+   <button @click="clickHandle">弹出提示框</button>
+ </template>
+ <script>
+ import {getCurrentInstance} from 'vue'
+ export default { 
+     setup(){
+       const instance = getCurrentInstance()
+       
+       function clickHandle(){
+         instance.appContext.config.globalProperties.$Toast({
+             type: 'warning',
+             title: '删除失败',
+             message: '请检查您的权限, <a href="#" style="color: #6C5DD3">权限管理</a>.'
+         })
+       }
+       
+       return {
+         clickHandle
+       }
+     }
+ }
+ </script>
+ ```

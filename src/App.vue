@@ -1,26 +1,21 @@
 <template>
-  <router-view />
+  <div>
+    <button @click="clickHandle">弹出消息</button>
+  </div>
 </template>
 
 <script>
-import {onMounted} from 'vue'
+import {getCurrentInstance} from 'vue'
 export default {
   setup() {
-     // 检测主题
-     function checkTheme(){
-       var theme = localStorage.getItem("theme");
-        window.document.documentElement.setAttribute(
-            "data-theme",
-            theme ? theme : "light"
-        );
-     }
+   const instance = getCurrentInstance()
 
-    // app被挂载
-    onMounted(()=>{
-      // 检测主题
-      checkTheme();
-    })
-
+   fucntion clickHandle(){
+      instance.appContext.config.globalProperties.$Toast({
+          type: 'success',
+          message: 'The Chaos Theme changed to <b>Dark</b>'
+        })
+   }
      return {
         checkTheme
      }

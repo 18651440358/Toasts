@@ -17,16 +17,11 @@ export default {
         })
    }
      return {
-        checkTheme
+        clickHandle
      }
   },
 }
 </script>
 
 <style lang="scss">
-@import "./assets/theme/handle";
-// 公共样式
-body{
-  @include color(mainColor);
-}
 </style>

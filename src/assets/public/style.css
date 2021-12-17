@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 公共样式 */
+
+
+/* 去除浏览器默认样式 */
+
+body {
+    font-size: 14px;
+    line-height: 1.71429;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    font-weight: 400;
+    cursor: default;
+    user-select: none;
+    font-family: HarmonyOS_Sans_SC, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+img,
+video {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    -webkit-touch-callout: none;
+    -webkit-appearance: none;
+    user-select: none;
+}
+
+
+/* 去除 <a> 链接默认下划线 */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 去除列表默认样式 */
+
+ul,
+ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

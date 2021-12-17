@@ -162,13 +162,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/theme/handle.scss";
 // 外部容器
 .toast-container{
     width: 330px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 0px;
     background-color: rgba(#F7F7F7, .6);
-    @include border(borderColor,1px solid);
+    border: 1px solid #E5E5E5;
     padding: 14px 13px;
     z-index: 1001;
     position: fixed;
@@ -180,9 +179,6 @@ export default {
     align-items: stretch;
     transition: all .3s ease;
     will-change: top,left;
-}
-[data-theme=dark] .toast-container{
-    background-color: rgba(#0C0D0E, .6);
 }
 // -------------- icon --------------
 .toast-icon, .toast-close{
@@ -198,26 +194,26 @@ export default {
 }
 // 正确
 .toast-icon.success{
-    @include background-color(successBackground);
-    @include color(successColor);
+    background-color: rgba(#2BB44A, .15);
+    color: #2BB44A;
 }
 // 异常
 .toast-icon.warning{
-    @include background-color(warningBackground);
-    @include color(warningColor);
+    background-color: rgba(#ffcc00, .15);
+    color: #F89E23;
     font-weight: 600;
     font-size: 18px;
 }
 // 错误
 .toast-icon.error{
     font-size: 18px;
-    @include background-color(dangerBackground);
-    @include color(dangerColor);
+    background-color: rgba(#EB2833, .1);
+    color: #EB2833;
 }
 // 信息
 .toast-icon.info{
-    @include background-color(blueBackground);
-    @include color(blue);
+    background-color: rgba(#3E71F3, .1);
+    color: #3E71F3;
 }
 // 自定义图片
 .toast-custom-img{
@@ -242,7 +238,7 @@ export default {
 .toast-title{
     font-size: 16px;
     line-height: 24px;
-    @include color(mainColor);
+    color: #191919;
     font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -251,12 +247,12 @@ export default {
 // time
 .toast-countdown{
     font-size: 12px;
-    @include color(placeholderColor);
+    color: #929292;
     line-height: 18.375px;
 }
 // --------------- body -----------
 .toast-body{
-    @include color(mainColor);
+    color: #191919;
     line-height: 21px;
     padding-top: 5px;
 }
@@ -273,48 +269,47 @@ export default {
     justify-content: center;
 }
 .toast-close:hover{
-    @include background-color(hoverBackground);
+    background-color: rgba(#E4E4E4, .5);
 }
 // --------- operate ----------
 .toast-button-confirm{
     font-weight: 600;
-    @include transition(200ms);
-    @include color(blue);
+    color: #3E71F3;
 }
 .toast-button-confirm:hover{
-    @include color(blueHoverColor);
+    color: #345ec9;
 }
 // 成功
 .toast-button-confirm.success{
-    @include color(successColor);
+    color: #2BB44A;
 }
 .toast-button-confirm.success:hover{
-    @include color(successHover);
+    color: #218a3a;
 }
 // 异常
 .toast-button-confirm.warning{
-    @include color(warningColor);
+    color: #F89E23;
 }
 .toast-button-confirm.warning:hover{
-    @include color(warningHover);
+    color: #df8f1f;
 }
 // 信息
 .toast-button-confirm.info{
-    @include color(blue);
+    color: #3E71F3;
 }
 .toast-button-confirm.info:hover{
-    @include color(blueHoverColor);
+    color: #345ec9;
 }
 // 错误
 .toast-button-confirm.error{
-    @include color(dangerColor);
+    color: #EB2833;
 }
 .toast-button-confirm.error:hover{
-    @include color(dangerHoverColor);
+    color: #c9101a;
 }
 
 
-  /*动画*/
+/*动画*/
 .toast-enter-from,
 .toast-leave-to{
   transform: translateX(120%);

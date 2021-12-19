@@ -31,12 +31,13 @@
         <!-- body -->
         <div class="toast-body" v-if="message" v-html="message"></div>
         <!-- operate -->
-        <div class="toast-operate">
+        <div class="toast-operate" v-if="confirmHandle">
             <a class="toast-button-confirm" 
                :class="[{'success':type==='success'},
                         {'warning':type==='warning'},
                         {'info':type==='info'},
-                        {'error':type==='error'}]">{{confirmText}}</a>
+                        {'error':type==='error'}]"
+                        @click="confirmHandle">{{confirmText}}</a>
         </div>
     </div>
     <!-- 关闭 -->
@@ -71,7 +72,8 @@ export default {
         autoClose: {
             type: Number,
             default: 4500
-        }
+        },
+        confirmHandle: Function
     },
     setup(props){
         // 显示

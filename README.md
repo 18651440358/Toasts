@@ -11,6 +11,7 @@
 |closeIcon|是否显示关闭按钮|Boolean|true/false|true|
 |message|消息主体(可以写入html)|string|-|-|
 |confirmText|按钮文字|string|-|-|
+|confirmHandle|按钮触发事件|function|-|-|
 |customIcon|自定义icon图标(type必须设置为custom)|string|-|-|
 |customIconBackground|自定义图标背景颜色(type必须设置为custom)|string|-|-|
 |customImg|自定义图片路径(type必须设置为img)|string|-|-|

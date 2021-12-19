@@ -46,7 +46,15 @@ app.use(toasts).mount('#app')
          instance.appContext.config.globalProperties.$Toast({
              type: 'warning',
              title: '删除失败',
-             message: '请检查您的权限, <a href="#" style="color: #6C5DD3">权限管理</a>.'
+             message: '请检查您的权限, <a href="#" style="color: #6C5DD3">权限管理</a>.',
+             autoClose: 10000,
+             confirmText: '已阅读',
+             confirmHandle: () => {
+                alert('阅读完成!')
+             },
+             leaveHandle: () => {
+                alert('Toasts 离开了')
+             }
          })
        }
        

@@ -73,7 +73,8 @@ export default {
             type: Number,
             default: 4500
         },
-        confirmHandle: Function
+        confirmHandle: Function,
+        leaveHandle: Function
     },
     setup(props){
         // 显示
@@ -107,6 +108,7 @@ export default {
         // 离开以后
         function afterLeave(){
             Bus.$emit('closed',id.value);
+            props.leaveHandle()
         }
         // 进入以后
         function afterEnter(){

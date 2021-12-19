@@ -8,15 +8,16 @@
 | 属性 | 说明 | 类型 | 可选值 | 默认值 |
 | --- | --- | --- | --- | --- | 
 |title|提示框标题(可以为空)|string|-|-|
-|closeIcon|是否显示关闭按钮|Boolean|true/false|true|
 |message|消息主体(可以写入html)|string|-|-|
-|confirmText|按钮文字|string|-|-|
-|confirmHandle|按钮触发事件|function|-|-|
+|closeIcon|是否显示关闭按钮|Boolean|true/false|true|
 |customIcon|自定义icon图标(type必须设置为custom)|string|-|-|
 |customIconBackground|自定义图标背景颜色(type必须设置为custom)|string|-|-|
 |customImg|自定义图片路径(type必须设置为img)|string|-|-|
 |autoClose|自动关闭时长(值小于等于0可以取消自动关闭)|number|-|4500|
+|confirmText|按钮文字|string|-|-|
+|confirmHandle|按钮触发事件|function|-|-|
 |type|提示框类型|string|success/warning/info/error/custom/img| - |
+|leaveHandle|Toasts离开后的回调|function|-|-|
 
 ## 在main.js注册 Toasts
 ```js

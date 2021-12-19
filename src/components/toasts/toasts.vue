@@ -108,7 +108,8 @@ export default {
         // 离开以后
         function afterLeave(){
             Bus.$emit('closed',id.value);
-            props.leaveHandle()
+            if(props.leaveHandle)
+                props.leaveHandle()
         }
         // 进入以后
         function afterEnter(){

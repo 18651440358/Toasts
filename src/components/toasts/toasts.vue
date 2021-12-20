@@ -137,6 +137,11 @@ export default {
         function destruction(){
             visible.value = false
         }
+        
+        // 主动关闭
+        function close(){
+            destruction();
+        }
 
         onMounted(()=>{
             createTimer();

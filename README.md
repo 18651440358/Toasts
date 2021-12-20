@@ -19,6 +19,11 @@
 |type|提示框类型|string|success/warning/info/error/custom/img| - |
 |leaveHandle|Toasts离开后的回调|function|-|-|
 
+## Toasts 事件
+| 事件 | 说明 | 参数 | 返回值 |试例|
+| --- | --- | --- | --- | --- |
+|close()|主动关闭toast|-|-|let toast = instance.appContext.config.globalProperties.$Toast({...}); <br/>toast.close();
+
 ## 在main.js注册 Toasts
 ```js
 import { createApp } from 'vue'
@@ -35,15 +40,17 @@ app.use(toasts).mount('#app')
  ```vue
  <template>
    <button @click="clickHandle">弹出提示框</button>
+   <button @click="closeHandle">主动关闭</button>
  </template>
  <script>
  import {getCurrentInstance} from 'vue'
  export default { 
      setup(){
        const instance = getCurrentInstance()
+       let toast
        
        function clickHandle(){
-         instance.appContext.config.globalProperties.$Toast({
+         toast = instance.appContext.config.globalProperties.$Toast({
              type: 'warning',
              title: '删除失败',
              message: '请检查您的权限, <a href="#" style="color: #6C5DD3">权限管理</a>.',
@@ -58,8 +65,15 @@ app.use(toasts).mount('#app')
          })
        }
        
+       // 主动关闭
+       fucntion closeHandle(){
+           if(toast)
+               toast.close();
+       }
+       
        return {
-         clickHandle
+         clickHandle,
+         closeHandle
        }
      }
  }
